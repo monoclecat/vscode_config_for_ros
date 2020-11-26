@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "g++ debug file of rt_graph_search",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${input:executable_to_debug}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "pre-run sourcing",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ],
+  "inputs": [
+      {
+          "id": "executable_to_debug",
+          "type": "pickString",
+          "description": "Which executable should be debugged? (must have been added to launch.json)",
+          "options": [
+            "devel/.private/rt_graph_search/lib/rt_graph_search/2d_example",
+          ]
+      }
+  ]
+}

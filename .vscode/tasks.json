@@ -1,0 +1,46 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"type": "shell",
+			"command": "catkin config --extend /opt/ros/melodic && catkin build rt_graph_search -j8 -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1; bash bash_scripts/concat_compile_commands.sh;",
+			"problemMatcher": [
+				"$catkin-gcc"
+			]
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "catkin clean --yes",
+			"problemMatcher": [
+				"$catkin-gcc"
+			]
+		},
+		{
+			"label": "test",
+			"type": "shell",
+			"command": "catkin config --no-install && catkin build --verbose --catkin-make-args run_tests | sed -n '/\[==========\]/,/\[==========\]/p'",
+			"problemMatcher": [
+				"$catkin-gcc"
+			]
+		},
+		{
+			"label": "release",
+			"type": "shell",
+			"command": "sudo checkinstall --install=no catkin build -j4 --cmake-args -DCMAKE_BUILD_TYPE=Release",
+			"problemMatcher": [
+				"$catkin-gcc"
+			]
+		},
+		{
+			"label": "pre-run sourcing",
+			"type": "shell",
+			"command": "source devel/setup.bash"
+		},
+	]
+}
