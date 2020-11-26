@@ -29,7 +29,7 @@
           "type": "pickString",
           "description": "Which executable should be debugged? (must have been added to launch.json)",
           "options": [
-            "devel/.private/rt_graph_search/lib/rt_graph_search/2d_example",
+            "devel/.private/ros_package_1/lib/ros_package_1/2d_example",
           ]
       }
   ]
