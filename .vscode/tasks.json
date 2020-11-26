@@ -8,7 +8,7 @@
 				"isDefault": true
 			},
 			"type": "shell",
-			"command": "catkin config --extend /opt/ros/melodic && catkin build -j8 -DCMAKE_EXPORT_COMPILE_COMMANDS=1; bash bash_scripts/concat_compile_commands.sh;",
+			"command": "catkin config --extend /opt/ros/melodic && catkin build -j8 -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_BUILD_TYPE=Debug; bash bash_scripts/concat_compile_commands.sh;",
 			"problemMatcher": [
 				"$catkin-gcc"
 			]
