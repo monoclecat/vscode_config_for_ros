@@ -2,10 +2,14 @@ This is the README for the `vscode_config_for_ros` repository.
 
 # Installation
 
-Simply clone this repository into a folder outside of your catkin workspace and copy its contents into your existing catkin/VS-Code workspace. 
+Simply clone this repository into a folder outside of your catkin workspace and copy the files to their respective locations. It is assumed that the base of your catkin workspace and the base of your VSCode workspace are the same. 
+
+`.vscode/launch.json` and `.vscode/tasks.json` belong inside the `.vscode` directory of your catkin/VSCode workspace.
+The `bash_scripts` directory should be copied into the base directory of your catkin/VSCode directory.
+`keybindings.json` needs to be copied into `~/.config/Code/User` (on Ubuntu). 
 
 
-# Contents of this repository
+## Contents of this repository
 
 ### `bash_scripts/concat_compile_commands.sh`
 
